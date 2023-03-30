@@ -42,6 +42,9 @@ var images = [
 
 console.log(areas);
 
+
+
+
   
 	
   
