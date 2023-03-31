@@ -142,7 +142,7 @@ class comments {
         this.content = content;
         this.children = children;
     }
-    * [Symbol.iterator]() {
+    *[Symbol.iterator]() {
          yield this.content;
          for (let child of this.children) {
             yield* child;
