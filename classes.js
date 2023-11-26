@@ -62,6 +62,7 @@ console.log('--------------------------------');
 
 // just using two words extends newCar we can extends the method of newCar--->
 class newFord extends newCar {
+    // i can destructure 'options' to {color, title, aur } and use
     constructor(options){
         // Whenever we have a subclass like newFord that wants to call a method on the parent when that same method is declared on both sides we refer to the "SUPER" keyword--->
         super(options);//newCar.constructor()
