@@ -1,2 +1,2 @@
 # ES6 Javascript
-## ES6's new methods and Course examples by <a href="https://github.com/stephenGrider/">Stephen Grider</a>
+## Here I'm using ES6 JS with all new method's with examples.
