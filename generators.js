@@ -23,8 +23,8 @@ function* shopping() {
     const stuffFromStore = yield 'cash';
 
     const washingClothes = yield 'clothes';
-
-    return [ washingClothes, stuffFromStore];
+    
+    return [ stuffFromStore, washingClothes];
 }
 
 // stuff in the store
