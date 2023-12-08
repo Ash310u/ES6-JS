@@ -19,7 +19,7 @@ console.log('-------------------------------------------------------');
 
 function* shopping() {
     // stuff on the sidewalk
-    
+
     const stuffFromStore = yield 'cash';
 
     const washingClothes = yield 'clothes';
@@ -27,6 +27,7 @@ function* shopping() {
     return [ washingClothes, stuffFromStore];
 }
 
+// stuff in the store
 let gen = shopping();
 
 // when first called gen,next() we started executing our code inside our generator function here until we got to the first yield statement. once we got to a yield statement, we yield a value
