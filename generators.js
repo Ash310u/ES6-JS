@@ -18,7 +18,8 @@ console.log('-------------------------------------------------------');
 // generator function syntax----------------------------------------------------------------------->
 
 function* shopping() {
-
+    // stuff on the sidewalk
+    
     const stuffFromStore = yield 'cash';
 
     const washingClothes = yield 'clothes';
