@@ -32,8 +32,8 @@ let gen = shopping();
 
 // when first called gen,next() we started executing our code inside our generator function here until we got to the first yield statement. once we got to a yield statement, we yield a value
 //  by calling gen.next() again we re-entered the generator function and change the value from yield statement and return.
-console.log(gen.next());
-console.log(gen.next('laundry'));
+console.log(gen.next()); // living our house
+console.log(gen.next('laundry')); // leaving the store with  groceries
 console.log(gen.next('groceries'));
 
 console.log('-------------------------------------------------------');
