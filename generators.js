@@ -130,8 +130,8 @@ const engineeringTeam_1 = {
         yield "asshole2"
     }
 }
-const names_1 = []
 
+const names_1 = []
 for (const name of engineeringTeam_1) {
     names_1.push(name);
 }
