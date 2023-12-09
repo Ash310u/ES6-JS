@@ -1,100 +1,100 @@
-// // For of loops------------------------------------------------------------------------------------->
-// // it's iterating through the arrays--->
+// For of loops------------------------------------------------------------------------------------->
+// it's iterating through the arrays--->
 
-// let numbers = [1,2,3,4];
+let numbers = [1,2,3,4];
 
-// let total = 0;
+let total = 0;
 
-// for (let number of numbers) {
-//     console.log(number)
-//     total += number;
-// }
-// console.log('-------------------------------------------------------');
+for (let number of numbers) {
+    console.log(number)
+    total += number;
+}
+console.log('-------------------------------------------------------');
 
-// console.log(total);
+console.log(total);
 
-// console.log('-------------------------------------------------------');
+console.log('-------------------------------------------------------');
 
-// // generator function syntax----------------------------------------------------------------------->
+// generator function syntax----------------------------------------------------------------------->
 
-// function* shopping() {
-//     // stuff on the sidewalk
+function* shopping() {
+    // stuff on the sidewalk
 
-//     const stuffFromStore = yield 'cash';
+    const stuffFromStore = yield 'cash';
 
-//     const washingClothes = yield 'clothes';
+    const washingClothes = yield 'clothes';
     
-//     return [ stuffFromStore, washingClothes];
-// }
+    return [ stuffFromStore, washingClothes];
+}
 
-// // stuff in the store
-// let gen = shopping();
+// stuff in the store
+let gen = shopping();
 
-// // when first called gen,next() we started executing our code inside our generator function here until we got to the first yield statement. once we got to a yield statement, we yield a value
-// //  by calling gen.next() again we re-entered the generator function and change the value from yield statement and return.
-// console.log(gen.next()); // living our house
-// console.log(gen.next('laundry')); // leaving the store with  groceries
-// console.log(gen.next('groceries'));
+// when first called gen,next() we started executing our code inside our generator function here until we got to the first yield statement. once we got to a yield statement, we yield a value
+//  by calling gen.next() again we re-entered the generator function and change the value from yield statement and return.
+console.log(gen.next()); // living our house
+console.log(gen.next('laundry')); // leaving the store with  groceries
+console.log(gen.next('groceries'));
 
-// console.log('-------------------------------------------------------');
+console.log('-------------------------------------------------------');
 
-// // generator function uses with for of loop---------------------------------------------------->
+// generator function uses with for of loop---------------------------------------------------->
 
-// function* colors() {
-//     yield 'red';
-//     yield 'green';
-//     yield 'blue';
-// }
-// const mycolors = [];
+function* colors() {
+    yield 'red';
+    yield 'green';
+    yield 'blue';
+}
+const mycolors = [];
 
-// for (let color of colors()) {
-//     mycolors.push(color);
-// }
-// console.log(mycolors);
+for (let color of colors()) {
+    mycolors.push(color);
+}
+console.log(mycolors);
 
-// console.log('-------------------------------------------------------');
+console.log('-------------------------------------------------------');
 
-// // A practical example of generator function----------------------------------------------------->
+// A practical example of generator function----------------------------------------------------->
 
-// // here we are try take the names from the engineeringTeam object--->[ GENERATOR DELEGATION ]
-// const testingTeam = {
-//     lead:'Sup',
-//     tester:'sahil'
-// }
+// here we are try take the names from the engineeringTeam object--->[ GENERATOR DELEGATION ]
+const testingTeam = {
+    lead:'Sup',
+    tester:'sahil'
+}
 
-// const engineeringTeam = {
-//     Size: 3,
-//     projectName:'kubernetes open sourse project',
-//     leader:'Ashu',
-//     coLeader:'Sanu',
-//     manager:'yunus',
-//     testingTeam
-// }
+const engineeringTeam = {
+    Size: 3,
+    projectName:'kubernetes open sourse project',
+    leader:'Ashu',
+    coLeader:'Sanu',
+    manager:'yunus',
+    testingTeam
+}
 
-// function* engineersiterator(team) {
-//     yield team.leader;
-//     yield team.coLeader;
-//     yield team.manager;
-//     // yield team.testingTeam.lead; // it would be a viable approach 
-//     const testersGenerator = testersiterator(team.testingTeam);
-//     // because its a diff Generator that's why i have pass 'yield' keyword with a "*".
-//     yield* testersGenerator;
-// }
+function* engineersiterator(team) {
+    yield team.leader;
+    yield team.coLeader;
+    yield team.manager;
+    // yield team.testingTeam.lead; // it would be a viable approach 
+    const testersGenerator = testersiterator(team.testingTeam);
+    // because its a diff Generator that's why i have pass 'yield' keyword with a "*".
+    yield* testersGenerator;
+}
 
-// // but more reusable solution would be to crate a separate generator
-// function* testersiterator(team) {
-//     yield team.lead;
-//     yield team.tester;
-// }
+// but more reusable solution would be to crate a separate generator
+function* testersiterator(team) {
+    yield team.lead;
+    yield team.tester;
+}
 
-// const names = []
+const names = []
 
-// for (const name of engineersiterator(engineeringTeam)) {
-//     names.push(name);
-// }
-// console.log(names);
+for (const name of engineersiterator(engineeringTeam)) {
+    names.push(name);
+}
+console.log(names);
 
-// console.log('-------------------------------------------------------');
+console.log('-------------------------------------------------------');
 
 // cleanup syntax---------------------------------------------------------------------------->
 
