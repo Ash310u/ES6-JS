@@ -109,6 +109,7 @@ const testingTeam_1 = {
         // yield this;
         // or
         yield 'asshole';
+        // or
         yield 5;
     }
 }
