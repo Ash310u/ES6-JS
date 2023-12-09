@@ -135,8 +135,8 @@ const names_1 = []
 for (const name of engineeringTeam_1) {
     names_1.push(name);
 }
-console.log(names_1);
 
+console.log(names_1);
 console.log('-------------------------------------------------------');
 
 // Generators with recursion & creating Trees---------------------------------------------------------------->
