@@ -77,6 +77,7 @@ function* engineersiterator(team) {
     yield team.manager;
     // yield team.testingTeam.lead; // it would be a viable approach 
     const testersGenerator = testersiterator(team.testingTeam);
+    // because its a diff Generator that's why i have pass 'yield' keyword with a "*".
     yield* testersGenerator;
 }
 
