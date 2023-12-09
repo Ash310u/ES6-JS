@@ -76,8 +76,8 @@ function* engineersiterator(team) {
     yield team.coLeader;
     yield team.manager;
     // yield team.testingTeam.lead; // it would be a viable approach 
-    const testersGenenrator = testersiterator(team.testingTeam);
-    yield* testersGenenrator;
+    const testersGenerator = testersiterator(team.testingTeam);
+    yield* testersGenerator;
 }
 
 // but more reusable solution would be to crate a separate generator
@@ -97,72 +97,72 @@ console.log('-------------------------------------------------------');
 
 // cleanup syntax---------------------------------------------------------------------------->
 
-const testingTeam_1 = {
-    lead:'Sup',
-    tester:'sahil',
-    // here the [Symbol.iterator] is a dynamically generated key
-    [Symbol.iterator]: function* (){ // the purpose of [Symbol.iterator] is to teach a for of loop how it should iterate over this object.
-        yield this.lead;
-        yield this.tester;
-        // If you want we could also put any other arbitrary values in here that we so choose.
-        yield this;
-        // or
-        yield 'asshole';
-        yield 5;
-    }
-}
+// const testingTeam_1 = {
+//     lead:'Sup',
+//     tester:'sahil',
+//     // here the [Symbol.iterator] is a dynamically generated key
+//     [Symbol.iterator]: function* (){ // the purpose of [Symbol.iterator] is to teach a for of loop how it should iterate over this object.
+//         yield this.lead;
+//         yield this.tester;
+//         // If you want we could also put any other arbitrary values in here that we so choose.
+//         yield this;
+//         // or
+//         yield 'asshole';
+//         yield 5;
+//     }
+// }
 
-const engineeringTeam_1 = {
-    testingTeam_1,
-    Size: 3,
-    projectName:'kubernetes open sourse project',
-    leader:'Ashu',
-    coLeader:'Sanu',
-    manager:'yunus',
-    [Symbol.iterator]:function* (){
-        yield this.leader;
-        yield this.coLeader;
-        yield this.manager;
-        yield* this.testingTeam_1;
-        // or
-        yield "asshole2"
-    }
-}
-const names_1 = []
+// const engineeringTeam_1 = {
+//     testingTeam_1,
+//     Size: 3,
+//     projectName:'kubernetes open sourse project',
+//     leader:'Ashu',
+//     coLeader:'Sanu',
+//     manager:'yunus',
+//     [Symbol.iterator]:function* (){
+//         yield this.leader;
+//         yield this.coLeader;
+//         yield this.manager;
+//         yield* this.testingTeam_1;
+//         // or
+//         yield "asshole2"
+//     }
+// }
+// const names_1 = []
 
-for (const name of engineeringTeam_1) {
-    names_1.push(name);
-}
-console.log(names_1);
+// for (const name of engineeringTeam_1) {
+//     names_1.push(name);
+// }
+// console.log(names_1);
 
-console.log('-------------------------------------------------------');
+// console.log('-------------------------------------------------------');
 
-// Generators with recursion & creating Trees---------------------------------------------------------------->
+// // Generators with recursion & creating Trees---------------------------------------------------------------->
 
-class comments {
-    constructor(content, children){
-        this.content = content;
-        this.children = children;
-    }
-    *[Symbol.iterator]() {
-         yield this.content;
-         for (let child of this.children) {
-            yield* child;
-         }
-    }
-}
+// class comments {
+//     constructor(content, children){
+//         this.content = content;
+//         this.children = children;
+//     }
+//     *[Symbol.iterator]() {
+//          yield this.content;
+//          for (let child of this.children) {
+//             yield* child;
+//          }
+//     }
+// }
 
-const children = [
-    new comments('good comment',[]),
-    new comments('bad comment',[]),
-    new comments('nutral comment',[])
-]
+// const children = [
+//     new comments('good comment',[]),
+//     new comments('bad comment',[]),
+//     new comments('nutral comment',[])
+// ]
 
-const tree = new comments('great post',children)
+// const tree = new comments('great post',children)
 
-const values = [];
+// const values = [];
 
-for (let value of tree) {
-    values.push(value);
-}
-console.log(values);
+// for (let value of tree) {
+//     values.push(value);
+// }
+// console.log(values);
