@@ -106,7 +106,7 @@ const testingTeam_1 = {
         yield this.lead;
         yield this.tester;
         // If you want we could also put any other arbitrary values in here that we so choose.
-        yield this;
+        // yield this;
         // or
         yield 'asshole';
         yield 5;
