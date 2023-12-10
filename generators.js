@@ -160,14 +160,20 @@ const children = [
     new comments('meh',[])
 ]
 
-const tree = new comments('great post',children)
+const tree = [
+    new comments('great post',children),
+    new comments('wow cool', children)
+]
+    
+const headTree = new comments('Head tree', tree)
 
 // we can seen the content of "great post" and then an "array" of "children"
-console.log(tree)
+console.log(headTree)
+console.log(headTree.children[1])
 
-const values = [];
+// const values = [];
 
-for (let value of tree) {
-    values.push(value);
-}
-console.log(values);
+// for (let value of tree) {
+//     values.push(value);
+// }
+// console.log(values);
