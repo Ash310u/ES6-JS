@@ -148,6 +148,7 @@ class comments {
     }
     *[Symbol.iterator]() {
          yield this.content;
+         // KeyNote: "array helpers" like "forEach & map" do not work with generators. So I used "for of" loop.
          for (let child of this.children) {
             yield* child;
          }
