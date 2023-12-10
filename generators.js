@@ -162,6 +162,9 @@ const children = [
 
 const tree = new comments('great post',children)
 
+// we can seen the content of "great post" and then an "array" of "children"
+console.log(tree)
+
 const values = [];
 
 for (let value of tree) {
