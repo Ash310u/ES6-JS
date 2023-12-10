@@ -157,7 +157,7 @@ class comments {
 const children = [
     new comments('good comment',[]),
     new comments('bad comment',[]),
-    new comments('nutral comment',[])
+    new comments('meh',[])
 ]
 
 const tree = new comments('great post',children)
