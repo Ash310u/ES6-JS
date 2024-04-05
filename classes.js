@@ -15,7 +15,7 @@ console.log(car);
 
 console.log('--------------------------------');
 
-// extend Car function in Ford constructor function suing PROTOTYPE--->
+// extend Car function in Ford constructor function using PROTOTYPE--->
 
 function Ford(options) {
     Car.call(this, options),
